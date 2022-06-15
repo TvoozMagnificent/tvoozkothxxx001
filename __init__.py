@@ -1,4 +1,4 @@
-from random import random, choice
+from random import random, choice, seed
 import csv
 from rich.live import Live
 from rich.table import Table
@@ -39,6 +39,7 @@ if LEADERBOARD:
 if MAIN:
 
     def main(BoTs=[], rounds=10000):
+        seed("Speed up, slowpoke!")
 
         def testbot(info, me, round):
             return [me, 0, 1]
