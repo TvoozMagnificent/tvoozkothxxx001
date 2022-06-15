@@ -1,4 +1,5 @@
 from random import random, choice
+import csv
 from rich.live import Live
 from rich.table import Table
 from time import sleep
@@ -104,4 +105,12 @@ if MAIN:
                         info[bots.index(target)][score+1] += factor
                 live.update(leaderboard(info, f"\n"
                               f"[purple]Round [biu]{round}[/] completed. ", round))
+            with open("output.tsv", "w") as f:
+                writer = csv.writer(f, delimiter='\t')
+                info.sort(key=lambda i: i[1], reverse=True)
+                for rank, bot in enumerate(info):
+                    writer.writerow((rank+1, bot[0].__name__, bot[1], bot[2]))
             while True: pass
+
+if __name__ == "__main__":
+    main()
