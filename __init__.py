@@ -28,7 +28,7 @@ if LEADERBOARD:
         table.add_column("Bot",   justify="right", style="bold #ffff00", width=x) # yellow
         table.add_column("Score", justify="right", style="#00ff00",      width=8) # green
         table.add_column("Freq.", justify="right", style="#ff0000",      width=8) # red
-
+        b=b[:10]
         for index in range(len(b)):
             bot = b[index]
             table.add_row(str(index+1),
