@@ -107,10 +107,10 @@ if MAIN:
                               f"[purple]Round [biu]{round}[/] completed. ", round))
             with open("output.tsv", "w") as f:
                 writer = csv.writer(f, delimiter='\t')
-                info.sort(key=lambda i:i[1], reverse=True)
+                info.sort(key=lambda i: i[1], reverse=True)
                 for rank, bot in enumerate(info):
                     writer.writerow((rank+1, bot[0].__name__, bot[1], bot[2]))
             while True: pass
 
-if __name__=="__main__":
+if __name__ == "__main__":
     main()
